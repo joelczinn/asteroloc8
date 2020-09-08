@@ -1,9 +1,5 @@
 import numpy as np
-<<<<<<< HEAD
-from asteroestimate.detections import probability as prob
-=======
 from asteroloc8.asteroestimate.detections import probability as prob
->>>>>>> initial attempt at integrating asteroestimate.
 from scipy.stats import norm, multivariate_normal
 
 def numax_JHK(J, H, K, parallax, mass=1., AK=None, N_samples=1000):

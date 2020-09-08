@@ -1,15 +1,9 @@
 import numpy as np
 from scipy.stats import chi2, multivariate_normal, norm
 from scipy.interpolate import interp1d
-<<<<<<< HEAD
 import asteroestimate.detections.noise as noise
 import asteroestimate.bolometric.polynomial as polybcs
 import asteroestimate.parsec.grid as grid
-=======
-import asteroloc8.asteroestimate.detections.noise as noise
-import asteroloc8.asteroestimate.bolometric.polynomial as polybcs
-import asteroloc8.asteroestimate.parsec.grid as grid
->>>>>>> initial attempt at integrating asteroestimate.
 import tqdm
 from multiprocessing import Pool, cpu_count
 from functools import partial
