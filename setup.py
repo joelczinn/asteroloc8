@@ -23,6 +23,6 @@ setuptools.setup(
     ],
     install_requires=requirements,
     include_package_data=True,  # <-- includes any package data without __init__.py
-    python_requires='>=3.6',
+    python_requires='>=3.5',
     license='MIT',
 )
