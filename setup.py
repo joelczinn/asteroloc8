@@ -17,7 +17,7 @@ setup(
     package_dir={
         'asteroloc8': 'asteroloc8',
         },
-    author='Ted Mackereth, Alex Lyttle, Joel Zinn',
+    author='Ted Mackereth, Alex Lyttle, Joel Zinn, Mat Schofield, William Chaplin, Jamie Tayar',
     install_requires=requirements,
     include_package_data=True,  # <-- includes any package data without __init__.py
 )
