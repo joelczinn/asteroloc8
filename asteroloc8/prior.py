@@ -3,7 +3,7 @@ import numpy as np
 from scipy.stats import norm, multivariate_normal
 
 from .asteroestimate import detections
-from .asteroestimate.detections import probability as prob     
+from .asteroestimate.detections import locate as loc     
 
 # these are real spec. and phot. data from an anonymous TESS star with measured numax of ~30uHz, with made-up uncertainties.
 def get_gaiascalnmx():
@@ -99,7 +99,7 @@ class NuPrior(object):
         multi_norm = multivariate_normal(means, cov)                                                        
         samples = multi_norm.rvs(size=N_samples)                                                            
         Jsamp, Hsamp, Ksamp, parallaxsamp = samples[:,0], samples[:,1], samples[:,2], samples[:,3]          
-        numaxsamp = prob.numax_from_JHK(Jsamp, Hsamp, Ksamp, parallaxsamp, mass=mass, AK=AK)                
+        numaxsamp = loc.numax_from_JHK(Jsamp, Hsamp, Ksamp, parallaxsamp, mass=mass, AK=AK)                
         numax_median = np.nanmedian(numaxsamp)                                                                     
         numax_std = np.nanstd(numaxsamp)                                                                     
         return (numax_median, numax_std), numaxsamp   
