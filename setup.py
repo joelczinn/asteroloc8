@@ -12,9 +12,17 @@ with open('requirements.txt') as file:
 setuptools.setup(
     name='asteroloc8',
     version=__version__,
-    description='Locate asteroseismic oscillations',
+    description='Locate asteroseismic numax',
     packages=setuptools.find_packages(include=['asteroloc8', 'asteroloc8.*']),
-    author='Ted Mackereth, Alex Lyttle, Joel Zinn, Mat Schofield, William Chaplin, Jamie Tayar',
+    author='Alex Lyttle, Joel Zinn, Ted Mackereth, Jamie Tayar, Martin Nielsen',
+    url='https://github.com/alexlyttle/asteroloc8',
+    classifiers=[
+        "Programming Language :: Python :: 3",
+        "License :: OSI Approved :: MIT License",
+        "Operating System :: OS Independent",
+    ],
     install_requires=requirements,
     include_package_data=True,  # <-- includes any package data without __init__.py
+    python_requires='>=3.6',
+    license='MIT',
 )
