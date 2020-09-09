@@ -1,4 +1,4 @@
-from setuptools import setup
+import setuptools
 
 # Load version
 __version__ = None
@@ -9,15 +9,12 @@ with open('requirements.txt') as file:
     requirements = file.read().splitlines()
 
 # Setup
-setup(
+setuptools.setup(
     name='asteroloc8',
     version=__version__,
     description='Locate asteroseismic oscillations',
-    packages=['asteroloc8'],
-    package_dir={
-        'asteroloc8': 'asteroloc8',
-        },
-    author='Ted Mackereth, Alex Lyttle, Joel Zinn',
+    packages=setuptools.find_packages(include=['asteroloc8', 'asteroloc8.*']),
+    author='Ted Mackereth, Alex Lyttle, Joel Zinn, Mat Schofield, William Chaplin, Jamie Tayar',
     install_requires=requirements,
     include_package_data=True,  # <-- includes any package data without __init__.py
 )
