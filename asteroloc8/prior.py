@@ -95,7 +95,7 @@ class NuPrior(Asteroseismology):
         Joel Zinn (j.zinn@unsw.edu.au)
         '''
         self.plx = plx
-        self.plx_err = plx
+        self.plx_err = plx_err
         self.logg_spec = logg_spec
         self.logg_spec_err = logg_spec_err
         self.teff_spec = teff_spec
@@ -145,7 +145,7 @@ class NuPrior(Asteroseismology):
         cov[3,3] = self.plx_err**2                                                                           
         multi_norm = multivariate_normal(means, cov)                                                        
         samples = multi_norm.rvs(size=N_samples)                                                            
-        Jsamp, Hsamp, Ksamp, parallaxsamp = samples[:,0], samples[:,1], samples[:,2], samples[:,3]          
+        Jsamp, Hsamp, Ksamp, parallaxsamp = samples[:,0], samples[:,1], samples[:,2], samples[:,3]
         numaxsamp = self.numax_from_JHK(Jsamp, Hsamp, Ksamp, parallaxsamp, mass=mass, AK=AK)                
         numax_median = np.nanmedian(numaxsamp)                                                                     
         numax_std = np.nanstd(numaxsamp)                                                                     
